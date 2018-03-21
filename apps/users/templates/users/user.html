@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+    <title>User {{user.id}}</title>
+</head>
+<body>
+    <h1>User {{user.id}}</h1>
+    <p>Name: {{user.first_name}} {{user.last_name}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Created at {{user.created_at}}</p>
+
+    <div class="bottom-links">
+        <a href="/users">Go Back</a> |
+        <a href="/users/{{user.id}}/edit">Edit</a> |
+        <a href="/users/{{user.id}}/destroy">Delete</a>
+    </div>
+</body>
+</html>
